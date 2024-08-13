@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import the Link component
-import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { BsFacebook, BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -25,6 +25,9 @@ const Footer = () => {
             <a href="https://www.facebook.com/profile.php?id=100031068829811">
               <BsFacebook className="w-8 h-8 bg-gray-700 text-white rounded-full p-2" />
             </a>
+            <a href="https://wa.me/8801621342194"> {/* WhatsApp লিঙ্ক */}
+              <BsWhatsapp className="w-8 h-8 bg-gray-700 text-white rounded-full p-2" />
+            </a>
           </div>
         </nav>
         <aside>
@@ -38,3 +41,4 @@ const Footer = () => {
 };
 
 export default Footer;
+  

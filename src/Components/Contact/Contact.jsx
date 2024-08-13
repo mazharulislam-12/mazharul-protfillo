@@ -5,7 +5,7 @@ import {
   GlobeAltIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsFacebook, BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs"; // BsWhatsapp যোগ করুন
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -58,11 +58,11 @@ const Contact = () => {
         <h1 className="text-center py-5 text-3xl text-white font-semibold">
           Contact Us
         </h1>
-        <div className="flex flex-col md:flex-row gap-10 md:gap-20 lg:gap-60">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 xl:gap-60">
           <div className="flex-1">
             <form onSubmit={handleSubmit}>
               {/* Form Fields */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <input
                   type="text"
                   name="firstName"
@@ -82,7 +82,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <input
                   type="email"
                   name="email"
@@ -129,7 +129,7 @@ const Contact = () => {
           </div>
           {/* Text Content */}
           <div className="flex-1">
-            <h2 className="text-3xl font-semibold text-gray-600 mb-8 text-center md:text-left">
+            <h2 className="text-3xl font-semibold text-gray-600 mb-8 text-center lg:text-left">
               Get In Touch
             </h2>
             <p className="leading-relaxed text-gray-300">
@@ -138,8 +138,8 @@ const Contact = () => {
               via email. Your message is important to us, and we will get back
               to you as soon as possible.
             </p>
-            <div className="my-8 space-y-10 md:space-y-20">
-              <div className="flex flex-col md:flex-row gap-8 md:gap-20">
+            <div className="my-8 space-y-10 lg:space-y-20">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
                 <div className="flex items-center gap-4">
                   <PhoneIcon className="w-7 text-gray-400" />
                   <div>
@@ -155,15 +155,15 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row gap-8 md:gap-20">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
                 <div className="flex items-center gap-4">
                   <GlobeAltIcon className="w-7 text-gray-400" />
                   <div>
                     <span className="text-lg text-white">Website</span> <br />
-                    <Link to={'https://mazharul-protfillo-kappa.vercel.app'} className="cursor-pointer">https://mazharul-protfillo-kappa.vercel.app</ Link>
+                    <Link to={'https://mazharul-protfillo-kappa.vercel.app'} className="cursor-pointer">https://mazharul-protfillo-kappa.vercel.app</Link>
                   </div>
                 </div>
-                <div className="flex mr-12 items-center gap-4">
+                <div className="flex items-center gap-4">
                   <MapPinIcon className="w-7 text-gray-400" />
                   <div>
                     <span className="text-lg text-white">Address</span>
@@ -182,6 +182,9 @@ const Contact = () => {
                   </a>
                   <a href="https://www.facebook.com/profile.php?id=100031068829811">
                     <BsFacebook className="w-8 h-8 bg-gray-700 text-white rounded-full p-2" />
+                  </a>
+                  <a href="https://wa.me/8801621342194"> {/* WhatsApp লিঙ্ক */}
+                    <BsWhatsapp className="w-8 h-8 bg-gray-700 text-white rounded-full p-2" />
                   </a>
                 </div>
               </div>
