@@ -6,6 +6,7 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -158,11 +159,11 @@ const Contact = () => {
                 <div className="flex items-center gap-4">
                   <GlobeAltIcon className="w-7 text-gray-400" />
                   <div>
-                    <span className="text-lg text-white">Website</span>
-                    <p>https://mazharul-protfillo-kappa.vercel.app</p>
+                    <span className="text-lg text-white">Website</span> <br />
+                    <Link to={'https://mazharul-protfillo-kappa.vercel.app'} className="cursor-pointer">https://mazharul-protfillo-kappa.vercel.app</ Link>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex mr-12 items-center gap-4">
                   <MapPinIcon className="w-7 text-gray-400" />
                   <div>
                     <span className="text-lg text-white">Address</span>

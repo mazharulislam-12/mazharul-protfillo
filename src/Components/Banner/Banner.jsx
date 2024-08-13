@@ -1,6 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import banner from "../../assets/banner.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -35,12 +36,13 @@ const Banner = () => {
           <p className="text-base md:text-lg text-gray-400 mb-8">
             Crafting Beautiful & Functional Web Experiences
           </p>
-          <a
-            href="#contact"
-            className="inline-block bg-rose-500 text-white py-2 px-6 rounded shadow hover:bg-rose-700 transition duration-200"
+          <Link
+            to="/contact"
+            type="button"
+            className="text-white bg-rose-500 hover:bg-rose-600 font-semibold rounded text-sm px-8 py-2 text-center"
           >
-            Get in Touch
-          </a>
+            Get in Touch 
+          </Link>
 
           <div className="absolute rounded-full w-full -left-20 -top-10 opacity-30 bg-gradient-to-tr from-rose-500 blur-3xl -z-50 to-black/30 h-[300px] md:h-[400px] backdrop-blur-2xl"></div>
         </div>
