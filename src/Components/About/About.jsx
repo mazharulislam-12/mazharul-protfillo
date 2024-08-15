@@ -3,12 +3,12 @@ import about from "../../assets/about_img.png";
 
 const About = () => {
   return (
-    <section className="flex flex-col items-center justify-center md:flex-row-reverse py-16 px-6 md:px-16 container mx-auto">
-      <div className="w-full md:w-[500px] space-y-8 mb-8 md:mb-0 text-center md:text-left md:pr-8">
+    <section className="flex flex-col items-center justify-evenly md:flex-row-reverse py-16 px-6 md:px-16 container mx-auto">
+      <div className="w-full md:w-[500px] space-y-8 mb-8 md:mb-0 text-center md:text-left">
         <h2 className="text-3xl md:text-5xl font-semibold text-white">
           About Me
         </h2>
-        <p className="leading-relaxed  text-gray-400">
+        <p className="leading-relaxed text-gray-400">
           Hello, I'm Mazharul Islam, a passionate frontend developer with a love
           for creating clean, intuitive user interfaces. I specialize in
           crafting responsive web experiences using HTML, CSS, JavaScript, and
@@ -24,13 +24,13 @@ const About = () => {
         >
           Download CV
         </a>
+
       </div>
-      <div className="w-full md:w-[400px] flex justify-center md:pl-8">
-        <img className="rounded-lg border-none w-[80%] md:w-full max-w-md" src={about} alt="About" />
+      <div className="w-full md:w-[400px] flex justify-center">
+        <img className="rounded-lg border-none w-[300px] md:w-full" src={about} alt="About" />
       </div>
     </section>
   );
 };
 
 export default About;
-  

@@ -5,7 +5,7 @@ import {
   GlobeAltIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-import { BsFacebook, BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs"; // BsWhatsapp যোগ করুন
+import { BsFacebook, BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -20,6 +20,7 @@ const Contact = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+  const [result, setResult] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -30,25 +31,34 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setResult("Sending...");
 
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        body: JSON.stringify({
+          access_key: "67399cf2-35c3-4dff-b509-2bf1dfb4e2fa",
+          ...formData,
+        }),
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setSubmitted(true);
         setError(false);
+        setResult("Form Submitted Successfully");
+        e.target.reset();
       } else {
-        throw new Error("Failed to send email");
+        throw new Error(data.message || "Failed to send email");
       }
     } catch (err) {
       setError(true);
       console.error(err);
+      setResult(err.message);
     }
   };
 
@@ -192,14 +202,9 @@ const Contact = () => {
           </div>
         </div>
 
-        {submitted && (
-          <p className="text-green-500 mt-4 text-center">
-            Thanks for submitting!
-          </p>
-        )}
-        {error && (
-          <p className="text-red-500 mt-4 text-center">
-            Failed to submit. Please try again later.
+        {result && (
+          <p className={`text-center mt-4 ${error ? "text-red-500" : "text-green-500"}`}>
+            {result}
           </p>
         )}
       </div>
